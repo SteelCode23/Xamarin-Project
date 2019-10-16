@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="Elogstation.Page1"
+             NavigationPage.HasBackButton="True">
+    <StackLayout VerticalOptions="Start" Padding="10">
+        <Grid HorizontalOptions="CenterAndExpand">
+            <Button x:Name="D_Device_Login" Clicked="D_Device_Login_ClickedAsync" FontSize="Small" TextColor="White" Text="Device Login" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"></Button>
+            <Button x:Name="D_Logs" Clicked="D_Logs_Clicked" FontSize="Small" TextColor="White" Text="Logs" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2"></Button>
+            <Button x:Name="D_Send_Data" Clicked="D_Send_Data_Clicked" FontSize="Small" TextColor="White" Text="Send Data" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2"></Button>
+            <Button x:Name="D_Map_View" Clicked="D_Map_View_Clicked" FontSize="Small" TextColor="White" Text="Map View" Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="2"></Button>
+        </Grid>
+        <StackLayout x:Name="Device_Login_Defi" Padding="15">
+            <Grid>
+                <Label x:Name="Column_Name_1" IsVisible="False" Font="Bold,20" Text="Device" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+                <Label x:Name="Column_Device_2" IsVisible="False" Font="Bold,20" Text="Login" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+                <Label x:Name="Column_Status_3" IsVisible="False" Font="Bold,20" Text="Status" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+                <Label x:Name="Device_Entry_0" IsVisible="False" TextColor="Black" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+                <Button x:Name="Login_Entry_0" IsVisible="False" BackgroundColor="LightBlue" TextColor="White" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Clicked="Login_Entry_0_ClickedAsync"/>
+                <Label x:Name="Status_Entry_0" IsVisible="False" TextColor="Black" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+                <Label x:Name="Device_Entry_1" IsVisible="False" TextColor="Black" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+                <Button x:Name="Login_Entry_1" IsVisible="False" BackgroundColor="LightBlue" TextColor="White" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Clicked="Login_Entry_1_ClickedAsync"/>
+                <Label x:Name="Status_Entry_1" IsVisible="False" TextColor="Black" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+                <Label x:Name="Device_Entry_2" IsVisible="False" TextColor="Black" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+                <Button x:Name="Login_Entry_2" IsVisible="False" BackgroundColor="LightBlue" TextColor="White" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Clicked="Login_Entry_2_ClickedAsync"/>
+                <Label x:Name="Status_Entry_2" IsVisible="False" TextColor="Black" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+                <Label x:Name="Test_API"></Label>
+            </Grid>
+        </StackLayout>
+        <Grid x:Name="Logs_Defi" Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.BackgroundColor>
+                <!--White-->
+            </Grid.BackgroundColor>
+            <Label Text="WIFI" FontSize="Medium" Grid.Column="1" Grid.Row="0"/>
+            <Switch Toggled="Switch_Toggled" Grid.Column="2" Grid.Row="0" />
+            <Label Text="BLUETOOTH" FontSize="Medium" Grid.Column="1" Grid.Row="1"/>
+            <Switch Toggled="Switch_Toggled_1" Grid.Column="2" Grid.Row="1"/>
+        </Grid>
+        <StackLayout x:Name="Send_Data_Defi" Padding="15">
+            <Button Text="Transmit Data over Bluetooth" BackgroundColor="#006064" TextColor="White" FontSize="Medium"></Button>
+            <Button Text="Transmit Data over WIFI" BackgroundColor="#006064" TextColor="White" FontSize="Medium"></Button>
+        </StackLayout>
+        <StackLayout x:Name="Map_View_Defi">
+            <!--
+            <maps:Map 
+                WidthRequest="300"
+                HeightRequest="300"
+                x:Name="MyMap"
+                IsShowingUser="True"
+                HasZoomEnabled="True"
+                MapType="Hybrid"/>
+             -->
+        </StackLayout>
+        <Label x:Name="SentData"/>
+        <Label x:Name="CalledCounter"/>
+        <Label x:Name="TimeStamp"/>
+    </StackLayout>
+</ContentPage>
